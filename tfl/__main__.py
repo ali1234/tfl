@@ -15,7 +15,7 @@ def main():
                         nargs=2, metavar=('stop','modes'),
                         help='Display information for a specific stop and modes.')
 
-    parser.add_argument('-D', '--details',
+    parser.add_argument('-d', '--details',
                        help='Display detailed information about disruptions.',
                        action='store_true')
     parser.add_argument('-a', '--arrivals',
