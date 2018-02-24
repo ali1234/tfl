@@ -20,7 +20,7 @@ class Arrival(object):
 
     def __str__(self):
         fg, bg = self.colours()
-        name = color(' {:18s} '.format(self.name), fg, bg)
+        name = color(' {:26s} '.format(self.name), fg, bg)
         dest = ' {:40s}'.format(self.destination)
         return '{}{} {:2d} mins'.format(name, dest, self.timeToStation//60)
 

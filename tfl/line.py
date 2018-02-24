@@ -27,7 +27,7 @@ class Line(object):
 
     def __str__(self):
         fg, bg = self.colours()
-        name = color(' {:18s} '.format(self.name), fg, bg)
+        name = color(' {:26s} '.format(self.name), fg, bg)
         return '{} {}'.format(name, self.severity_desc)
 
 def lines_for_modes(modes):
