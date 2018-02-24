@@ -11,8 +11,8 @@ def main():
                         help='Display status for a mode.')
     parser.add_argument('-l', '--line', type=str, action='append', default=[],
                         help='Display status for a specific line.')
-    parser.add_argument('-s', '--stop', type=str, action='append',  default=[],
-                        nargs=2, metavar=('stop','modes'),
+    parser.add_argument('-s', '--stop', type=str, action='append', default=[],
+                        nargs='+', metavar=('STOP', 'MODE'),
                         help='Display information for a specific stop and modes.')
 
     parser.add_argument('-d', '--details',
@@ -54,14 +54,14 @@ def main():
         print('')
         print('\n\n'.join([textwrap.fill(d, 68) for d in dis]))
 
-    for stop_id, modes in args.stop:
+    for s in args.stop:
         try:
-            stop = tfl.stop.Stop(stop_id)
+            stop = tfl.stop.Stop(s[0])
             print('')
             print(stop)
             print('')
             dis = []
-            for line in stop.lines(modes=modes):
+            for line in stop.lines(modes=s[1:]):
                 print(line)
                 if line.disruption is not None:
                     dis.append(line.disruption)

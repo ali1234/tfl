@@ -18,9 +18,9 @@ class Stop(object):
     def __str__(self):
         return color(self.name, fg='white', style='bold')
 
-    def lines(self, modes = None):
+    def lines(self, modes = []):
         for line in tfl.line.lines_for_ids(self.line_ids):
-            if modes is not None and line.mode in modes:
+            if len(modes) == 0 or line.mode in modes:
                 yield line
 
     def arrivals(self):
