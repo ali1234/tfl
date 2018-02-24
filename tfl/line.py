@@ -62,6 +62,6 @@ if __name__ == '__main__':
 
     if len(dis) > 0:
         print('')
-        print('\n\n'.join([textwrap.fill(d, 68) for d in dis]))
+        print('\n\n'.join([textwrap.fill(d, 77) for d in dis]))
 
     print('')

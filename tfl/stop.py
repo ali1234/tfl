@@ -16,7 +16,7 @@ class Stop(object):
         self.line_ids = [l['id'] for l in json['lines']]
 
     def __str__(self):
-        return self.name
+        return color(self.name, fg='white', style='bold')
 
     def lines(self, modes = None):
         for line in tfl.line.lines_for_ids(self.line_ids):
@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
         if len(dis) > 0:
             print('')
-            print('\n\n'.join([textwrap.fill(d, 68) for d in dis]))
+            print('\n\n'.join([textwrap.fill(d, 77) for d in dis]))
         print('')
         for a in stop.arrivals():
             print(a)

@@ -68,7 +68,7 @@ def main():
 
             if args.details and len(dis) > 0:
                 print('')
-                print('\n\n'.join([textwrap.fill(d, 68) for d in dis]))
+                print('\n\n'.join([textwrap.fill(d, 77) for d in dis]))
 
             if args.arrivals:
                 print('')
